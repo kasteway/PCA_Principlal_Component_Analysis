@@ -1,4 +1,5 @@
-# PCA_Principlal_Component_Analysis
+# PCA_Principlal_Component_Analysis 
+## from sklearn.decomposition import PCA
 
 ### Summary:
 
@@ -126,7 +127,10 @@ The data set used for this analysis comes from [UC Irvine Machine Learning Repos
 ### Tips:
 
 - Must scale data -> Standardize to shift data mean to 0 (from sklearn.preprocessing import StandardScaler)
-- 
+- Hyperperameter - select how many components to create  -> PCA(n_components=2)
+- Model Attributes - number of components created -> model_name.n_components
+- Model Attributes - directions of the maximum variance in the data -> model_name.components_
+- Model Attributes - Percentage of variance explained of the data (the addition of the components explains the total percentage of the data set) -> model_name.explained_variance_ratio_
 
 
 
