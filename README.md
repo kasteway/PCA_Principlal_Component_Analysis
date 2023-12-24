@@ -14,7 +14,7 @@ Here's where PCA comes in handy. PCA is like a smart assistant that helps simpli
 
 In our smartphone example, PCA helps you focus on what's really important by simplifying the complex information. Instead of juggling four different features across multiple phones, you now have maybe just two principal components to consider, making your decision easier.
 
-##### Steps for PCA:
+#### PCA In Action:
 
 1. Dimensionality Reduction:
 
@@ -40,6 +40,25 @@ PCA can be used to reduce the number of pixels that the model needs to consider.
 
 
 ---
+
+### Steps used in PCA: Through these steps, PCA allows you to simplify complex datasets while retaining the most meaningful aspects of your original data.
+
+- Get original data - Collect and assemble your data in a structured format. This dataset should consist of various features (variables) that you want to analyze and reduce in dimensionality.
+  
+- Calculatue Covariance Matrix - Compute the covariance matrix to understand how each pair of features in the dataset varies with each other. The covariance matrix helps in identifying the relationships and dependencies among the features.
+  
+- Calculate Eigen Vectors - Find the eigen vectors of the covariance matrix. These eigen vectors are essentially directions along which the data varies the most. They are crucial for understanding the underlying structure of the data.
+  
+- Sort EigenVectors by Eigen Values - Arrange the eigen vectors in descending order according to their corresponding eigen values. Eigen values give the magnitude of variance captured by each eigen vector, so sorting them helps in understanding the relative importance of each direction of variance.
+  
+- Choose N largest Eigen Values - Select the top N eigen vectors corresponding to the largest N eigen values. This step is about deciding how many principal components you want to keep based on how much variance you want to retain in the data.
+  
+- Project original data onto Eigen Vectors - Transform the original data onto the new axes defined by the selected eigen vectors. This step effectively reduces the dimensions of your data to those that capture the most variance, as per the chosen eigen vectors.
+
+
+
+---
+
 
 ### Advantages & Disadvantages:
 
