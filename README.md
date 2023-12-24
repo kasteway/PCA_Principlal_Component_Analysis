@@ -45,15 +45,18 @@ PCA can be used to reduce the number of pixels that the model needs to consider.
 
 - Get original data - Collect and assemble your data in a structured format. This dataset should consist of various features (variables) that you want to analyze and reduce in dimensionality.
   
-- Calculatue Covariance Matrix - Compute the covariance matrix to understand how each pair of features in the dataset varies with each other. The covariance matrix helps in identifying the relationships and dependencies among the features.
+- Calculatue Covariance Matrix (np.cov(scaled_X, rowvar=False)) - Compute the covariance matrix to understand how each pair of features in the dataset varies with each other. The covariance matrix helps in identifying the relationships and dependencies among the features.
   
-- Calculate Eigen Vectors - Find the eigen vectors of the covariance matrix. These eigen vectors are essentially directions along which the data varies the most. They are crucial for understanding the underlying structure of the data.
+- Calculate Eigen Vectors (eigen_values, eigen_vectors = np.linalg.eig(covariance_matrix) )- Find the eigen vectors of the covariance matrix. These eigen vectors are essentially directions along which the data varies the most. They are crucial for understanding the underlying structure of the data.
   
-- Sort EigenVectors by Eigen Values - Arrange the eigen vectors in descending order according to their corresponding eigen values. Eigen values give the magnitude of variance captured by each eigen vector, so sorting them helps in understanding the relative importance of each direction of variance.
+- Sort EigenVectors by Eigen Values (eigen_values, eigen_vectors = np.linalg.eig(covariance_matrix) )- Arrange the eigen vectors in descending order according to their corresponding eigen values. Eigen values give the magnitude of variance captured by each eigen vector, so sorting them helps in understanding the relative importance of each direction of variance.
   
 - Choose N largest Eigen Values - Select the top N eigen vectors corresponding to the largest N eigen values. This step is about deciding how many principal components you want to keep based on how much variance you want to retain in the data.
+  num_components = 2 -> sorted_key = np.argsort(eigen_values)[::-1][:num_components] -> eigen_values, eigen_vectors = eigen_values[sorted_key], eigen_vectors[:, sorted_key]
   
-- Project original data onto Eigen Vectors - Transform the original data onto the new axes defined by the selected eigen vectors. This step effectively reduces the dimensions of your data to those that capture the most variance, as per the chosen eigen vectors.
+- Project original data onto Eigen Vectors (principal_components = np.dot(scaled_X,eigen_vectors))- Transform the original data onto the new axes defined by the selected eigen vectors. This step effectively reduces the dimensions of your data to those that capture the most variance, as per the chosen eigen vectors.
+  
+- Visualize the Principal Components -> plt.scatter(principal_components[:,0],principal_components[:,1])
 
 
 
@@ -121,7 +124,7 @@ The data set used for this analysis comes from [UC Irvine Machine Learning Repos
 
 ### Tips:
 
-- Boosting can be used for both Classification & Regression problems
+- Must scale data -> Standardize to shift data mean to 0 (from sklearn.preprocessing import StandardScaler)
 - 
 
 
