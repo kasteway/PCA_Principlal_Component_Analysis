@@ -56,7 +56,8 @@ PCA can be used to reduce the number of pixels that the model needs to consider.
   
 - Project original data onto Eigen Vectors (principal_components = np.dot(scaled_X,eigen_vectors))- Transform the original data onto the new axes defined by the selected eigen vectors. This step effectively reduces the dimensions of your data to those that capture the most variance, as per the chosen eigen vectors.
   
-- Visualize the Principal Components -> plt.scatter(principal_components[:,0],principal_components[:,1])
+- Visualize the Principal Components -> plt.scatter(principal_components[:,0],principal_components[:,1],c=cancer_dictionary['target'])
+
 
 
 
