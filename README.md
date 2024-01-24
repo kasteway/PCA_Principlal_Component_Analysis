@@ -132,7 +132,7 @@ The data set used for this analysis comes from [UC Irvine Machine Learning Repos
 - Model Attributes - number of components created -> model_name.n_components
 - Model Attributes - directions of the maximum variance in the data -> model_name.components_
 - Model Attributes - Percentage of variance explained of the data (the addition of the components explains the total percentage of the data set) -> model_name.explained_variance_ratio_
-
+-
 
 
 ---
