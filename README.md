@@ -141,5 +141,5 @@ The data set used for this analysis comes from [UC Irvine Machine Learning Repos
 
 - AdaBoostClassifier [Scikit Learn AdaBoostClassifier]([https://archive.ics.uci.edu/dataset/73/mushroom](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html).
 - base_estimator -> default is none meaning it will use "DecisionTreeClassifier" initialized with max_depth = 1 as the stump (if desired, another estimator can be manually selected)
-- 
+ 
 ---
